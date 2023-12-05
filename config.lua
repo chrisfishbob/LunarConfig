@@ -1,8 +1,5 @@
 lvim.plugins = {
     -- Themes
-    {
-        "chrisfishbob/Everbloom",
-    },
     { "ellisonleao/gruvbox.nvim", priority = 1000 },
     { "sainnhe/sonokai" },
     { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
