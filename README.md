@@ -1,6 +1,6 @@
 # LunarConfig
 
-Beyond this README file, the repo will always only contain one `config.lua` file in perpituitiy, throughout the universe.
+Beyond this README file and the license, the repo will always only contain one `config.lua` file, in perpituitiy, throughout the universe.
 
 ## Installation
 Replace your `config.lua` file with this one in your LunarVim configuration directory (default is ~/.config/lvim)
