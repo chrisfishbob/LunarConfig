@@ -20,5 +20,4 @@ This config file includes additional plugins that are not included in the LunarV
 * vim-python-pep8-indent
 * nvim-ufo
 * nvim-colorizer
-
-
+* nvim-surround

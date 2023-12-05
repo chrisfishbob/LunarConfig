@@ -87,12 +87,20 @@ lvim.plugins = {
         "norcalli/nvim-colorizer.lua",
         config = function()
             require "colorizer".setup({
-                'css';
-                'javascript';
-                'html';
+                'css',
+                'javascript',
+                'html',
             })
         end,
-    }
+    },
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup()
+        end
+    },
 }
 
 -- Set default color scheme
