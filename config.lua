@@ -91,8 +91,6 @@ lvim.plugins = {
     }
 }
 
-Sonokai_dim_inactive_windows = 0
-
 -- Set default color scheme
 lvim.colorscheme = "sonokai"
 
