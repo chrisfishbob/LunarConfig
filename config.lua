@@ -76,7 +76,7 @@ lvim.plugins = {
                 -- INFO some filetypes only allow indent, some only LSP, some only
                 -- treesitter. However, ufo only accepts two kinds as priority,
                 -- therefore making this function necessary :/
-                local lspWithOutFolding = { "markdown", "sh", "css", "html", "python" }
+                local lspWithOutFolding = { "markdown", "sh", "css", "html", "python", "yaml" }
                 if vim.tbl_contains(lspWithOutFolding, ft) then return { "treesitter", "indent" } end
                 return { "lsp", "indent" }
             end,
@@ -84,7 +84,6 @@ lvim.plugins = {
             -- use `:UfoInspect` to get available fold kinds from the LSP
             close_fold_kinds = { "imports", "comment" },
             open_fold_hl_timeout = 800,
-            -- fold_virt_text_handler = foldTextFormatter,
         },
     },
     {
