@@ -1,6 +1,7 @@
 # LunarConfig
+A fast, powerful, fully-featured IDE-replacement config file for LunarVim.
 
-Beyond this README file and the license, the repo will always only contain one `config.lua` file, in perpituitiy, throughout the universe.
+![alt text](https://github.com/chrisfishbob/LunarConfig/blob/main/lunar_config_screenshot.png?raw=true)
 
 ## Installation
 ### Basic Plugins
