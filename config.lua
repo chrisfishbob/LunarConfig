@@ -106,6 +106,62 @@ lvim.plugins = {
             require("nvim-surround").setup()
         end
     },
+    {
+        "mfussenegger/nvim-dap",
+        config = function()
+            local dap = require('dap')
+            dap.adapters.codelldb = {
+                type = 'server',
+                port = "${port}",
+                executable = {
+                    -- TODO: Download codelldb here: https://github.com/vadimcn/codelldb/releases
+                    -- TODO: CHANGE THIS to your codelldb path!
+                    command = '/usr/local/bin/extension/adapter/codelldb',
+                    args = { "--port", "${port}" },
+
+                    -- On windows you may have to uncomment this:
+                    -- detached = false,
+                }
+            }
+            dap.configurations.cpp = {
+                {
+                    name = "Launch file",
+                    type = "codelldb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                    end,
+                    cwd = '${workspaceFolder}',
+                    stopOnEntry = false,
+                },
+            }
+            dap.configurations.rust = {
+                {
+                    name = "Launch file",
+                    type = "codelldb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target', 'file')
+                    end,
+                    cwd = '${workspaceFolder}',
+                    stopOnEntry = false,
+                },
+            }
+            dap.configurations.c = dap.configurations.cpp
+        end
+    },
+    {
+        'mfussenegger/nvim-dap-python',
+        config = function()
+            -- TODO: Do this first
+            -- cd ~
+            -- mkdir .virtualenvs
+            -- cd .virtualenvs
+            -- python3 -m venv debugpy
+            -- debugpy/bin/python3 -m pip install debugpy
+            require('dap-python').setup('~/.virtualenvs/debugpy/bin/python3')
+        end
+    },
 }
 
 -- Set default color scheme
