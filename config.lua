@@ -2,7 +2,19 @@ lvim.plugins = {
     -- Themes
     { "ellisonleao/gruvbox.nvim", priority = 1000 },
     { "sainnhe/sonokai" },
-    { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        opts = {
+            color_overrides = {
+                mocha = {
+                    base = "#323030",
+                    mantle = "#323030",
+                },
+            }
+        }
+    },
     -- Harpoon
     {
         "ThePrimeagen/harpoon",
@@ -39,7 +51,7 @@ lvim.plugins = {
         keys = {
             {
                 "zr",
-                function() require("ufo").openFoldsExceptKinds { "comment" } end,
+                function() require("ufo").openFoldsExceptKinds {} end,
                 desc = " 󱃄 Open All Folds except comments",
             },
             { "zm", function() require("ufo").closeAllFolds() end, desc = " 󱃄 Close All Folds" },
@@ -84,7 +96,7 @@ lvim.plugins = {
             end,
             -- open opening the buffer, close these fold kinds
             -- use `:UfoInspect` to get available fold kinds from the LSP
-            close_fold_kinds = { "imports", "comment" },
+            -- close_fold_kinds = { "imports", "comment" },
             open_fold_hl_timeout = 800,
         },
     },
@@ -95,6 +107,7 @@ lvim.plugins = {
                 'css',
                 'javascript',
                 'html',
+                'lua',
             })
         end,
     },
@@ -165,7 +178,7 @@ lvim.plugins = {
 }
 
 -- Set default color scheme
-lvim.colorscheme = "sonokai"
+lvim.colorscheme = "catppuccin"
 
 -- Undotree toggle
 lvim.keys.normal_mode["<leader>u"] = vim.cmd.UndotreeToggle
