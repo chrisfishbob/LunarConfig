@@ -100,6 +100,7 @@ lvim.plugins = {
             open_fold_hl_timeout = 800,
         },
     },
+    -- Displays hex and other colors
     {
         "norcalli/nvim-colorizer.lua",
         config = function()
@@ -111,6 +112,7 @@ lvim.plugins = {
             })
         end,
     },
+    -- Easily insert surround characters such as "this", (this), or {this}
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -119,6 +121,7 @@ lvim.plugins = {
             require("nvim-surround").setup()
         end
     },
+    -- Debugger adaptor
     {
         "mfussenegger/nvim-dap",
         config = function()
@@ -163,6 +166,7 @@ lvim.plugins = {
             dap.configurations.c = dap.configurations.cpp
         end
     },
+    -- Debugger support for python
     {
         'mfussenegger/nvim-dap-python',
         config = function()
@@ -175,6 +179,16 @@ lvim.plugins = {
             require('dap-python').setup('~/.virtualenvs/debugpy/bin/python3')
         end
     },
+    -- Fully featured in-browser markdown preview
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+    },
+    -- Quick in-vim markdown preview
+    { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+
 }
 
 -- Set default color scheme
