@@ -232,3 +232,6 @@ lvim.keys.normal_mode["<C-p>"] = ":BufferLineCyclePrev<CR>"
 
 -- For when the LSP decides to hallucinate
 lvim.keys.normal_mode["<leader>z"] = ":LspRestart<CR>"
+
+-- For toggling markdown preview
+lvim.keys.normal_mode["<leader>md"] = ":MarkdownPreviewToggle<CR>"
