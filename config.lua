@@ -188,6 +188,16 @@ lvim.plugins = {
     },
     -- Quick in-vim markdown preview
     { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+    -- Jump everywhere with zero cognitive overhead
+    {
+        "ggandor/leap.nvim",
+        dependencies = "tpope/vim-repeat",
+        config = function()
+            -- Remove the LSP binding for 'gs', because it conflicts with Leap
+            lvim.lsp.buffer_mappings.normal_mode['gs'] = nil
+            require('leap').create_default_mappings()
+        end
+    }
 
 }
 

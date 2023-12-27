@@ -30,3 +30,4 @@ This config file includes additional plugins that are not included in the LunarV
 * nvim-surround
 * Undotree
 * vim-python-pep8-indent
+* Leap
