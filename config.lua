@@ -195,10 +195,20 @@ lvim.plugins = {
         config = function()
             -- Remove the LSP binding for 'gs', because it conflicts with Leap
             lvim.lsp.buffer_mappings.normal_mode['gs'] = nil
+            lvim.lsp.buffer_mappings.normal_mode['s'] = nil
             require('leap').create_default_mappings()
         end
+    },
+    -- Eyeliner: move faster with unique f/F indicators
+    {
+        'jinh0/eyeliner.nvim',
+        config = function()
+            require 'eyeliner'.setup {
+                highlight_on_key = true, -- show highlights only after keypress
+                dim = false              -- dim all other characters if set to true (recommended!)
+            }
+        end
     }
-
 }
 
 -- Set default color scheme
