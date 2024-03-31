@@ -1,4 +1,6 @@
-# LunarConfig
+# LunarConfig [DEPRECATED]
+**Deprecated in favor of [mono.nvim](https://github.com/chrisfishbob/mono.nvim)**
+
 A fast, powerful, fully-featured IDE-replacement config file for LunarVim.
 
 ![alt text](https://github.com/chrisfishbob/LunarConfig/blob/main/lunar_config_screenshot.png?raw=true)
